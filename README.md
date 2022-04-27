@@ -10,4 +10,6 @@ NOTE: All specflow tests should have a tag of @acceptance to keep them properly 
 
 M1 MAC USERS: I had to force living doc to install with the correct architecture using -a arm64. I also had to manually set DOTNET_ROOT env var to the location of dotnet (which dotnet).
  
- david was here
+ david was here again
+
+ Deepak was here too
