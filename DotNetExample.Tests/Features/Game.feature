@@ -27,3 +27,4 @@ Scenario Outline: Set Welcome Screen Message
         | Erin           | yes  |Welcome to Level up Game        |
         | Tom            | No   |           |
 
+
