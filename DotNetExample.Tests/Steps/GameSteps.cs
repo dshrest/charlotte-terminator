@@ -36,5 +36,20 @@ namespace DotNetExample.Tests.Steps
         {
             testObj.getStatus().playerName.Should().Be(playerNameOutput);
         }
+
+        [When(@"the player enter ""(.*)""")]
+        public void ThenTheResultShouldBe(string confirmation)
+        {
+            
+        }
+
+        [When(@"the Game display ""(.*)""")]
+        public void ThenTheResultShouldBe(string welcomemessage)
+        {
+            
+        }
+
+
+
     }
 }
