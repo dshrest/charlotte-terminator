@@ -115,6 +115,41 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Set Welcome Screen Message")]
+        [NUnit.Framework.TestCaseAttribute("Erin", "yes", "Welcome to Level up Game", null)]
+        [NUnit.Framework.TestCaseAttribute("Tom", "No", "", null)]
+        public void SetWelcomeScreenMessage(string playerNameInput, string confirmation, string welcomemessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("playerNameInput", playerNameInput);
+            argumentsOfScenario.Add("confirmation", confirmation);
+            argumentsOfScenario.Add("welcomemessage", welcomemessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Set Welcome Screen Message", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 19
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 21
+    testRunner.Given(string.Format("the player\'s name is \"{0}\"", playerNameInput), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 22
+    testRunner.When(string.Format("the player enter \"{0}\"", confirmation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 23
+    testRunner.Then(string.Format("the Game display \"{0}\"", welcomemessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

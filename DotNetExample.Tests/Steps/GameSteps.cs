@@ -36,5 +36,10 @@ namespace DotNetExample.Tests.Steps
         {
             testObj.getStatus().playerName.Should().Be(playerNameOutput);
         }
+
+
+
+
+
     }
 }
