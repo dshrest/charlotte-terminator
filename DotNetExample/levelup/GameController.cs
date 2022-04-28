@@ -27,6 +27,10 @@ namespace levelup
                 this.status.playerName = DEFAULT_PLAYER_NAME;
             }
         }
+        public string getWelcomeMessage()
+        {
+            return null;
+        }
 
     }
 }

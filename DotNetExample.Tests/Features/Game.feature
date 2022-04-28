@@ -16,14 +16,16 @@ Scenario Outline: Set player name
         |                | Player           |
 
 
-Scenario Outline: Set Welcome Screen Message  
+@acceptance 
+Scenario Outline: Get Welcome Screen Message  
 
     Given the player's name is "<playerNameInput>"
-    When the player enter "<confirmation>"
-    Then the Game display "<welcomemessage>"
+    When the Game starts
+    Then the Game displays "<WelcomemessageOutput>"
     Examples:
 
-        | playerNameInput|confirmation |welcomemessage |  
-        | Erin           | yes  |Welcome to Level up Game        |
-        | Tom            | No   |           |
+        | playerNameInput   |WelcomemessageOutput               |  
+        | Erin              |Welcome to Level up Game Erin      |
+        | Tom               |Welcome to Level up Game Tom       |
+        |                   |Welcome to Level up Game Player    | 
 

@@ -117,18 +117,25 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Set Welcome Screen Message")]
-        [NUnit.Framework.TestCaseAttribute("Erin", "yes", "Welcome to Level up Game", null)]
-        [NUnit.Framework.TestCaseAttribute("Tom", "No", "", null)]
-        public void SetWelcomeScreenMessage(string playerNameInput, string confirmation, string welcomemessage, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Get Welcome Screen Message")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        [NUnit.Framework.TestCaseAttribute("Erin", "Welcome to Level up Game Erin", null)]
+        [NUnit.Framework.TestCaseAttribute("Tom", "Welcome to Level up Game Tom", null)]
+        [NUnit.Framework.TestCaseAttribute("", "Welcome to Level up Game Player", null)]
+        public void GetWelcomeScreenMessage(string playerNameInput, string welcomemessageOutput, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "acceptance"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("playerNameInput", playerNameInput);
-            argumentsOfScenario.Add("confirmation", confirmation);
-            argumentsOfScenario.Add("welcomemessage", welcomemessage);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Set Welcome Screen Message", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 19
+            argumentsOfScenario.Add("WelcomemessageOutput", welcomemessageOutput);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Welcome Screen Message", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -138,14 +145,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 21
+#line 22
     testRunner.Given(string.Format("the player\'s name is \"{0}\"", playerNameInput), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 22
-    testRunner.When(string.Format("the player enter \"{0}\"", confirmation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 23
-    testRunner.Then(string.Format("the Game display \"{0}\"", welcomemessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("the Game starts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 24
+    testRunner.Then(string.Format("the Game displays \"{0}\"", welcomemessageOutput), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -37,6 +37,17 @@ namespace DotNetExample.Tests.Steps
             testObj.getStatus().playerName.Should().Be(playerNameOutput);
         }
 
+        [When(@"the Game starts")]
+        public void theGameStarts(string playerNameInput)
+        {
+            testObj = new GameController();
+            testObj.createCharacter(playerNameInput);
+        }
+        [Then(@"the Game displays ""(.*)""")]
+        public void ThenWelcomeMessageShouldBe(string WelcomemessageOutput)
+        {
+            testObj.getWelcomeMessage().Should().Be(WelcomemessageOutput);
+        }
 
 
 
